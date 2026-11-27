@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Share your details and ask questions in the ZillionPathways support chat.">
+  <meta name="theme-color" content="#f3f7f4">
+  <title>ZillionPathways</title>
+  <link rel="stylesheet" href="styles.css?v=11">
+  <script src="app.js?v=17" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="ZillionPathways home">
+        <span class="brand-mark" aria-hidden="true"><span class="bubble-icon"></span></span>
+        <span>ZillionPathways</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <div class="intro">
+      <h1>How can we help?</h1>
+      <p id="storage-notice">This demo saves chat history and your details in this browser.</p>
+    </div>
+
+    <section class="panel chat-view" aria-label="ZillionPathways support assistant">
+      <div class="panel-header">
+        <span class="assistant-mark" aria-hidden="true"><span class="bubble-icon"></span></span>
+        <div>
+          <h2>Support assistant</h2>
+          <p id="chat-description">Profile questions are optional</p>
+        </div>
+        <button id="clear-chat" class="text-button reset-button" type="button" hidden>Clear chat</button>
+      </div>
+      <div id="conversation" class="conversation" role="log" aria-label="Chat messages" tabindex="0">
+        <div class="message message-assistant">
+          <span class="message-label">ZillionPathways</span>
+          <div class="message-bubble">
+            <p>Hi! Welcome to <strong>ZillionPathways</strong>. I’m here to help you get started.</p>
+            <div id="first-prompt-actions" hidden>
+              <form id="profile-form" class="profile-form" novalidate>
+                <label id="profile-label" for="profile-answer" class="sr-only">Full name</label>
+                <input id="profile-answer" type="text" maxlength="100" placeholder="Your full name" autocomplete="name" aria-describedby="profile-feedback" required disabled>
+                <button class="primary-button" type="submit" disabled>Continue</button>
+                <p id="profile-feedback" class="form-feedback" role="status"></p>
+              </form>
+              <button class="text-button skip-question" type="button" disabled>Skip</button>
+            </div>
+          </div>
+        </div>
+        <noscript><p>Enable JavaScript in your browser to continue the chat.</p></noscript>
+      </div>
+      <form id="chat-form" class="composer" novalidate>
+        <label for="reply" class="sr-only">Your question</label>
+        <input id="reply" type="text" maxlength="500" placeholder="Select Skip to chat" autocomplete="off" aria-describedby="reply-feedback" required disabled>
+        <button class="primary-button" type="submit" disabled>Send</button>
+        <p id="reply-feedback" class="form-feedback" role="status"></p>
+      </form>
+    </section>
+  </main>
+  <template id="typing-template">
+    <div class="message message-assistant typing-indicator" role="status">
+      <span class="message-label" aria-hidden="true">ZillionPathways</span>
+      <div class="message-bubble typing-bubble">
+        <span class="sr-only">ZillionPathways is typing</span>
+        <span class="typing-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+      </div>
+    </div>
+  </template>
+</body>
+</html>
